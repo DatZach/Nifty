@@ -8,8 +8,10 @@
 
 module Nifty {
     export class RectangleShape extends Drawable {
-        public size: Point = new Point();
-
+        constructor(public size: Point = new Point()) {
+            super();
+        }
+        
         public draw(): void {
             var x = this.position.x - this.origin.x * this.scale.x,
                 y = this.position.y - this.origin.y * this.scale.y,
