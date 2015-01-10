@@ -4,7 +4,6 @@
  *  Drawable object
  */
 
-/// <reference path="../../nifty.ts" />
 /// <reference path="../../system/point.ts" />
 /// <reference path="../../system/rect.ts" />
 /// <reference path="../color.ts" />

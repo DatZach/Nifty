@@ -193,7 +193,7 @@ var Primary = (function(_super) {
 })(Nifty.State);
 
 $(document).ready(function() {
-    Nifty.settings.assetsPath = 'build/assets';
+    Nifty.settings.assetsPath = 'examples/assets';
     Nifty.initialize();
     Nifty.setState(new Primary());
     Nifty.run();

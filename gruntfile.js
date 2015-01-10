@@ -38,7 +38,8 @@ module.exports = function (grunt) {
             src: [
                 'src/**/*.d.ts',
                 '!src/lib/**/*.d.ts',
-                'src/**/*.js'
+                'src/**/*.js',
+                '!src/lib/**/*.js'
             ]
         }
     });
