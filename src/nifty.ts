@@ -4,11 +4,12 @@
  */
 
 /// <reference path="lib/jquery-1.11.1.d.ts" />
-/// <reference path="system/util.ts" />
-/// <reference path="system/point.ts" />
-/// <reference path="system/rect.ts" />
-/// <reference path="video/backend/render-target.ts" />
-/// <reference path="video/tile-map.ts" />
+/// <reference path="system/system.ts" />
+/// <reference path="video/video.ts" />
+/// <reference path="asset-manager.ts" />
+/// <reference path="entity-manager.ts" />
+/// <reference path="entity.ts" />
+/// <reference path="input.ts" />
 /// <reference path="state.ts" />
 /// <reference path="timer.ts" />
 

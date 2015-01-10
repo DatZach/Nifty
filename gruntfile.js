@@ -7,7 +7,11 @@ module.exports = function (grunt) {
         typescript: {
             js: {
                 src: [ 'src/*.ts', 'src/**/*.ts' ],
-                dest: 'build/<%= pkg.name %>.js'
+                dest: 'build/<%= pkg.name %>.js',
+                
+                options: {
+                    declaration: true
+                }
             }
         },
 
@@ -32,9 +36,11 @@ module.exports = function (grunt) {
                 'build'
             ],
             src: [
-                'src/*.d.ts'
+                'src/**/*.d.ts',
+                '!src/lib/**/*.d.ts',
+                'src/**/*.js'
             ]
-        ]
+        }
     });
 
     // Load task plugins
