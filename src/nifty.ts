@@ -29,7 +29,8 @@ module Nifty {
         entityGridSize: 64,
         entityOverscan: 64,
         timestep: 1.0 / 60.0,
-        maxUpdatesPerFrame: 5
+        maxUpdatesPerFrame: 5,
+        fillWindow: false
     };
     
     export var framerate: number = 0;

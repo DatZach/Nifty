@@ -53,6 +53,11 @@ module Nifty {
     function initializeWebGLContext(): void {
         // TODO Create canvas based off of preferences stated in settings object
         canvas = <HTMLCanvasElement> $(settings.canvasElement)[0];
+        if (settings.fillWindow) {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        }
+        
         gl = canvas.getContext('webgl') || canvas.getContext('experimental-webgl');
 
         // TODO Drivers for WebGL and 2d Canvas
