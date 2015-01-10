@@ -90,11 +90,12 @@ module Nifty {
         private createTexture(): void {
             var fontSize: string[] = /^\d+?(?=(pt|px))/.exec(this.font.toLowerCase());
             var size: number = +fontSize[0] + (fontSize[1] === 'pt' ? +fontSize[0] * 1.33 : 0);
+            var lines = this.text.split('\n');
     
             // Calculate canvas size required to render entire text
             Nifty.backBuffer.font = this.font;
             var width  = this.clampToValidSize(Nifty.backBuffer.measureText(this.text).width),
-                height = this.clampToValidSize(size / 2);
+                height = this.clampToValidSize((size / 2) * lines.length);
             
             // Drawable needs the size of the buffer to work properly
             this.size = new Point(width, height);
@@ -105,7 +106,9 @@ module Nifty {
             Nifty.backBuffer.fillStyle = this.color.getCssColor();
             Nifty.backBuffer.font = this.font;               // Reset font because changing the width/height resets the canvas
             Nifty.backBuffer.textBaseline = 'hanging';
-            Nifty.backBuffer.fillText(this.text, 0, 0);
+            for(var i = 0; i < lines.length; ++i) {
+                Nifty.backBuffer.fillText(lines[i], 0, i * (size / 2));
+            }
             
             // Create texture
             this.textureId = gl.createTexture();
